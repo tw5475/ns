@@ -4,9 +4,9 @@ require File.expand_path('../lib/ns/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Jaimie van Santen"]
   gem.email         = ["jaimie@jaimievansanten.nl"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Provides a Ruby wrapper for the Dutch NS API}
+  gem.summary       = %q{ns api}
+  gem.homepage      = "https://github.com/jaimie-van-santen/ns"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

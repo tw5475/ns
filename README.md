@@ -1,6 +1,6 @@
-# Ns
+# NS
 
-TODO: Write a gem description
+Provides a Ruby wrapper for the Dutch NS API.
 
 ## Installation
 
@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    ns_client = Ns::Client.new(api_key, api_password)
+    available_stations = ns_client.get_stations
+    advice = ns_client.get_travel_advice(available_stations[0], 
+                                         available_stations[1])
+
+Should return a travel advice based on the first and second available station.
+
+
 
 ## Contributing
 
