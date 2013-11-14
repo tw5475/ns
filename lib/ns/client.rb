@@ -17,13 +17,15 @@ module Ns
 
     def get_prices(from, to, opts = {}, &block)
       options = {
-        through: false,
-        date: false
+        # through: false,
+        :through => false,
+        # date: false
+        :date => false
       }.update(opts)
 
       url = "/ns-api-prijzen-v2?"
-      url << "from=#{from}"
-      url << "&to=#{to}"
+      url << "from=#{from.upcase}"
+      url << "&to=#{to.upcase}"
       url << "&via=#{options[:via]}" if options[:via].present?
       url << "&date=#{options[:date]}" if options[:date].present?
       URI.escape!(url)
@@ -33,13 +35,22 @@ module Ns
 
     def get_travel_advice(from, to, opts = {}, &block)
       options = {
-        through: '',
+=begin
+through: '',
         previous_advices: 5,
         next_advices: 5,
         date_time: false,
         departure: true,
         hsl: true,
         year_card: false
+=end        
+	:through => '',
+        :previous_advices => 5,
+        :next_advices =>  5,
+        :date_time => false,
+        :departure => true,
+        :hsl => true,
+        :year_card => false
       }.update(opts)
 
       url = "/ns-api-treinplanner?"
